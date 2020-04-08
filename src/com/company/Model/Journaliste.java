@@ -1,9 +1,31 @@
 package com.company.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="journaliste")
 public class Journaliste {
+    @Id
+    // Permet de définir la statégie de génération
+    // de la clé lors d'une insertion en base de données.
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id")
     private int id_journaliste;
+
+    @Column(name="journalisteName")
     private String login;
+
+    @Column(name="credit")
     private int credit;
+
+    @Override
+    public String toString() {
+        return "Journaliste{" +
+                "id_journaliste=" + id_journaliste +
+                ", login='" + login + '\'' +
+                ", credit=" + credit +
+                '}';
+    }
 
     /**
      * Constructor
