@@ -1,11 +1,11 @@
-package com.company;
+package com.company.Model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnexionJDBC {
 
-        // initilize Connection and Driver
+        /*initilize Connection and Driver
         public static Connection maConnection= null; //java.sql pour le choix
         public static final String DRIVER_CONNECTOR ="com.mysql.cj.jdbc.Driver";
 
@@ -17,23 +17,23 @@ public class ConnexionJDBC {
         public static final String PASSWORD= "";
 
 
-         public static void ouvrirConnexion() {
+         public static void ouvrirConnexion() throws SQLException, ClassNotFoundException {
                 try{
                         //Charge le driver jdbc
                         Class.forName(DRIVER_CONNECTOR);
 
                         //Connexion
-                        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+                        //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
                         maConnection  = DriverManager.getConnection(URL,LOGIN,PASSWORD);
                         System.out.println("Connexion établie !");
                 }
                 catch(ClassNotFoundException e){
                         System.out.println("Impossible de charger le pilote!"+ e.getMessage());
-                        return;
+                        throw new ClassNotFoundException();
                 }
                 catch(SQLException e){
                         System.out.println("Connexion impossible !"+ e.getMessage());
-                        return;
+                        throw new SQLException(e);
                 }
         }
 
@@ -45,5 +45,5 @@ public class ConnexionJDBC {
                                 e.printStackTrace();
                         }
                 }
-        }
+        }*/
 }
